@@ -213,8 +213,8 @@ const ContactSection = () => {
                 Send Message
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div>
                     <label className="block text-gray-300 text-sm font-medium mb-2">
                       Name *
@@ -225,7 +225,7 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full h-12 glass-effect border-gray-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 text-base"
+                      className="w-full h-11 sm:h-12 glass-effect border-gray-600/50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 text-sm sm:text-base"
                       placeholder="Your Name"
                     />
                   </div>
@@ -240,53 +240,48 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full h-12 glass-effect border-gray-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 text-base"
+                      className="w-full h-11 sm:h-12 glass-effect border-gray-600/50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 text-sm sm:text-base"
                       placeholder="your@email.com"
                     />
                   </div>
+                </div>
 
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Subject *
-                    </label>
-                    <Input
-                      type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full h-12 glass-effect border-gray-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 text-base"
-                      placeholder="Project Discussion"
-                    />
-                  </div>
+                <div>
+                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                    Subject *
+                  </label>
+                  <Input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full h-11 sm:h-12 glass-effect border-gray-600/50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 text-sm sm:text-base"
+                    placeholder="Project Discussion"
+                  />
+                </div>
 
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Message *
-                    </label>
-                    <Textarea
-                      rows={4}
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full glass-effect border-gray-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 resize-none text-base"
-                      placeholder="Tell me about your project..."
-                    />
-                  </div>
+                <div>
+                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                    Message *
+                  </label>
+                  <Textarea
+                    rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full min-h-[100px] glass-effect border-gray-600/50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 resize-none text-sm sm:text-base"
+                    placeholder="Tell me about your project..."
+                  />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isLoading}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSubmit(e);
-                  }}
-                  className="w-full h-14 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2 text-base shadow-lg hover:shadow-xl"
+                  className="w-full h-12 sm:h-14 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-2 text-sm sm:text-base shadow-lg hover:shadow-xl touch-manipulation"
                   style={{ 
-                    cursor: isLoading ? 'not-allowed' : 'pointer',
-                    pointerEvents: 'auto'
+                    cursor: isLoading ? 'not-allowed' : 'pointer'
                   }}
                 >
                   {isLoading ? (

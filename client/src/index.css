@@ -82,15 +82,27 @@
     background: linear-gradient(to bottom, #2563eb, #7c3aed);
   }
 
-  /* Ensure buttons have proper cursor */
+  /* Ensure buttons have proper cursor and functionality */
   button, .cursor-pointer, [type="submit"], [type="button"] {
     cursor: pointer !important;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     touch-action: manipulation;
+    pointer-events: auto !important;
   }
   
   button:disabled, [type="submit"]:disabled, [type="button"]:disabled {
     cursor: not-allowed !important;
+    pointer-events: auto !important;
+  }
+
+  /* Force button interactivity */
+  button[type="submit"] {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
+
+  button[type="submit"]:hover {
+    cursor: pointer !important;
   }
 
   /* Enhanced mobile touch targets */
@@ -296,11 +308,36 @@
     input, textarea {
       -webkit-appearance: none;
       border-radius: 8px;
+      font-size: 16px; /* Prevents zoom on iOS */
     }
 
     /* Disable hover effects on mobile */
     .magnetic-hover:hover {
       transform: none;
+    }
+
+    /* Enhanced mobile button styling */
+    button[type="submit"] {
+      min-height: 48px !important;
+      font-size: 16px !important;
+      padding: 12px 20px !important;
+      border: none !important;
+      background-clip: padding-box !important;
+    }
+
+    /* Mobile form improvements */
+    .glass-effect {
+      backdrop-filter: blur(10px);
+    }
+
+    /* Better touch targets */
+    .card-gradient {
+      padding: 20px !important;
+    }
+
+    /* Fix mobile viewport issues */
+    html {
+      -webkit-text-size-adjust: 100%;
     }
   }
 }
