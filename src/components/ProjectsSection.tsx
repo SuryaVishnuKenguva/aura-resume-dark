@@ -1,38 +1,63 @@
-
-import { ExternalLink, Github, Code, Database, Brain, Eye, Rocket } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import {
+  ExternalLink,
+  Github,
+  Code,
+  Database,
+  Brain,
+  Eye,
+  Rocket,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const ProjectsSection = () => {
   const projects = [
     {
       title: "Drive Aware Alarm System",
       category: "AI & Computer Vision",
-      description: "Real-time driver monitoring system with 85% accuracy in detecting drowsiness and improper positioning. Reduced false alerts by 30% using advanced ML algorithms.",
+      description:
+        "Real-time driver monitoring system with 85% accuracy in detecting drowsiness and improper positioning. Reduced false alerts by 30% using advanced ML algorithms.",
       technologies: ["Python", "OpenCV", "Machine Learning", "Computer Vision"],
       icon: <Brain className="w-6 h-6" />,
-      achievements: ["85% accuracy rate", "30% reduction in false alerts", "Real-time processing"],
-      award: "Consolation Prize at PU Hackathon 1.0"
+      achievements: [
+        "85% accuracy rate",
+        "30% reduction in false alerts",
+        "Real-time processing",
+      ],
+      award: "Consolation Prize at PU Hackathon 1.0",
     },
     {
       title: "TravelEase Platform",
       category: "Full-Stack Development",
-      description: "Comprehensive travel management platform with real-time booking, notifications, and itinerary management. Enhanced booking efficiency by 20%.",
+      description:
+        "Comprehensive travel management platform with real-time booking, notifications, and itinerary management. Enhanced booking efficiency by 20%.",
       technologies: [".NET Core", "PostgreSQL", "Redis", "RabbitMQ", "Azure"],
       icon: <Database className="w-6 h-6" />,
-      achievements: ["20% booking efficiency improvement", "15% error reduction", "Real-time notifications"]
+      achievements: [
+        "20% booking efficiency improvement",
+        "15% error reduction",
+        "Real-time notifications",
+      ],
     },
     {
-      title: "Gemini Clone UI",
-      category: "Frontend Development",
-      description: "Modern AI platform interface replica with enhanced UX/UI, improving user satisfaction by 10% and optimizing load times.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      title: "Streamify - Language Learning Platform",
+      category: "Web Development",
+      description:
+        "Developed a full-stack web app for connecting language learners via video chat and using Stream API. Improved performance by 25% using React Query and optimized state management.",
+      technologies: ["ReactJS", "Node.js", "Express", "MongoDB", "Stream API"],
       icon: <Code className="w-6 h-6" />,
-      achievements: ["10% user satisfaction increase", "Optimized performance", "Responsive design"]
-    }
+      achievements: [
+        "25% performance improvement",
+        "Optimized state management",
+        "Real-time video chat",
+      ],
+    },
   ];
 
   return (
-    <section id="projects" className="h-screen flex items-center bg-slate-900/50 relative overflow-hidden">
+    <section
+      id="projects"
+      className="h-screen flex items-center bg-slate-900/50 relative overflow-hidden"
+    >
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 text-purple-500/10">
@@ -42,7 +67,7 @@ const ProjectsSection = () => {
           <Code size={70} className="animate-pulse delay-1000" />
         </div>
       </div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-12 section-fade">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -55,7 +80,7 @@ const ProjectsSection = () => {
 
         <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <div 
+            <div
               key={project.title}
               className="card-gradient p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 section-fade group hover:transform hover:scale-105 skill-glow"
               style={{ animationDelay: `${index * 0.2}s` }}
@@ -66,10 +91,18 @@ const ProjectsSection = () => {
                   <div className="text-blue-400">{project.icon}</div>
                 </div>
                 <div className="flex gap-2">
-                  <Button size="sm" variant="outline" className="bg-transparent border-gray-600 hover:bg-blue-600/20 hover:border-blue-500 h-8 w-8 p-0">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="bg-transparent border-gray-600 hover:bg-blue-600/20 hover:border-blue-500 h-8 w-8 p-0"
+                  >
                     <Github size={14} />
                   </Button>
-                  <Button size="sm" variant="outline" className="bg-transparent border-gray-600 hover:bg-blue-600/20 hover:border-blue-500 h-8 w-8 p-0">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="bg-transparent border-gray-600 hover:bg-blue-600/20 hover:border-blue-500 h-8 w-8 p-0"
+                  >
                     <ExternalLink size={14} />
                   </Button>
                 </div>
@@ -77,18 +110,22 @@ const ProjectsSection = () => {
 
               {/* Project Info */}
               <div className="mb-4">
-                <span className="text-blue-400 text-xs font-medium">{project.category}</span>
+                <span className="text-blue-400 text-xs font-medium">
+                  {project.category}
+                </span>
                 <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed mb-3 text-sm">{project.description}</p>
+                <p className="text-gray-300 leading-relaxed mb-3 text-sm">
+                  {project.description}
+                </p>
               </div>
 
               {/* Technologies */}
               <div className="mb-4">
                 <div className="flex flex-wrap gap-1">
                   {project.technologies.map((tech) => (
-                    <span 
+                    <span
                       key={tech}
                       className="bg-slate-800/50 text-gray-300 px-2 py-1 rounded-full text-xs border border-gray-700/50"
                     >
@@ -106,7 +143,10 @@ const ProjectsSection = () => {
                 </h4>
                 <ul className="space-y-1">
                   {project.achievements.slice(0, 2).map((achievement, i) => (
-                    <li key={i} className="text-gray-400 text-xs flex items-center gap-2">
+                    <li
+                      key={i}
+                      className="text-gray-400 text-xs flex items-center gap-2"
+                    >
                       <div className="w-1 h-1 bg-green-400 rounded-full"></div>
                       {achievement}
                     </li>
@@ -117,7 +157,9 @@ const ProjectsSection = () => {
               {/* Award */}
               {project.award && (
                 <div className="bg-gradient-to-r from-yellow-600/20 to-orange-600/20 border border-yellow-500/30 p-2 rounded-lg">
-                  <p className="text-yellow-400 text-xs font-medium">🏆 {project.award}</p>
+                  <p className="text-yellow-400 text-xs font-medium">
+                    🏆 {project.award}
+                  </p>
                 </div>
               )}
             </div>

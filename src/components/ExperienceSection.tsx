@@ -5,7 +5,7 @@ const ExperienceSection = () => {
   const experience = {
     company: "Casepoint Pvt. Ltd, Surat",
     position: "Software Engineer Intern",
-    period: "Jan 2025 - Present",
+    period: "Jan 2025 - Apr 2025",
     type: "Software Engineering Intern",
     achievements: [
       {

@@ -6,7 +6,7 @@ const EducationSection = () => {
     degree: "B.Tech in Computer Science and Engineering",
     university: "Parul University, Vadodara",
     period: "Aug 2021 - Present",
-    cgpa: "7.83/10",
+    cgpa: "8.01/10",
     coursework: [
       "AI & Machine Learning",
       "Data Structures & Algorithms", 
