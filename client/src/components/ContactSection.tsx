@@ -118,164 +118,68 @@ const ContactSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
-            {/* Contact Info */}
-            <div className="card-gradient p-5 sm:p-6 md:p-8 rounded-xl md:rounded-2xl border border-gray-700/50 section-fade order-2 lg:order-1">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 gradient-text">
+          <div className="max-w-4xl mx-auto">
+            {/* Contact Info - Expanded Single Section */}
+            <div className="card-gradient p-6 sm:p-8 md:p-10 rounded-xl border border-gray-700/50 section-fade text-center">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 gradient-text">
                 Get In Touch
               </h3>
-              <p className="text-gray-300 mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
-                Let's discuss your next project or explore collaboration
-                opportunities in AI, web development, and innovative technology
-                solutions.
+              <p className="text-gray-300 mb-10 leading-relaxed text-base md:text-lg max-w-2xl mx-auto">
+                Ready to collaborate on innovative projects? Let's discuss how we can bring your ideas to life with cutting-edge technology solutions.
               </p>
               
-              <div className="space-y-4 md:space-y-5">
-                <div className="flex items-start gap-3 group">
-                  <div className="bg-blue-600/20 p-2.5 rounded-lg group-hover:bg-blue-600/30 transition-all duration-300 skill-glow flex-shrink-0 mt-0.5">
-                    <Mail className="w-4 h-4 text-blue-400" />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+                <div className="flex flex-col items-center p-6 bg-slate-800/50 rounded-lg border border-gray-700/30">
+                  <div className="bg-blue-600/20 p-4 rounded-full mb-4">
+                    <Mail className="w-6 h-6 text-blue-400" />
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-gray-400 text-xs font-medium mb-1">
-                      Email
-                    </p>
-                    <p className="text-white font-semibold text-sm break-words">
-                      suryakenguva1@gmail.com
-                    </p>
-                  </div>
+                  <p className="text-gray-400 text-sm font-medium mb-2">Email</p>
+                  <p className="text-white font-semibold text-sm break-all">suryakenguva1@gmail.com</p>
                 </div>
 
-                <div className="flex items-start gap-3 group">
-                  <div className="bg-green-600/20 p-2.5 rounded-lg group-hover:bg-green-600/30 transition-all duration-300 skill-glow flex-shrink-0 mt-0.5">
-                    <Phone className="w-4 h-4 text-green-400" />
+                <div className="flex flex-col items-center p-6 bg-slate-800/50 rounded-lg border border-gray-700/30">
+                  <div className="bg-green-600/20 p-4 rounded-full mb-4">
+                    <Phone className="w-6 h-6 text-green-400" />
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-gray-400 text-xs font-medium mb-1">
-                      Phone
-                    </p>
-                    <p className="text-white font-semibold text-sm">
-                      +91-9182560368
-                    </p>
-                  </div>
+                  <p className="text-gray-400 text-sm font-medium mb-2">Phone</p>
+                  <p className="text-white font-semibold text-sm">+91-9182560368</p>
                 </div>
 
-                <div className="flex items-start gap-3 group">
-                  <div className="bg-purple-600/20 p-2.5 rounded-lg group-hover:bg-purple-600/30 transition-all duration-300 skill-glow flex-shrink-0 mt-0.5">
-                    <MapPin className="w-4 h-4 text-purple-400" />
+                <div className="flex flex-col items-center p-6 bg-slate-800/50 rounded-lg border border-gray-700/30">
+                  <div className="bg-purple-600/20 p-4 rounded-full mb-4">
+                    <MapPin className="w-6 h-6 text-purple-400" />
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-gray-400 text-xs font-medium mb-1">
-                      Location
-                    </p>
-                    <p className="text-white font-semibold text-sm">
-                      Visakhapatnam, India
-                    </p>
-                  </div>
+                  <p className="text-gray-400 text-sm font-medium mb-2">Location</p>
+                  <p className="text-white font-semibold text-sm">Visakhapatnam, India</p>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3 mt-6 md:mt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
                 <a
                   href="https://github.com/SuryaVishnuKenguva"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-700/50 hover:bg-gray-600/50 text-white rounded-lg transition-all duration-300 hover:scale-105 border border-gray-600/50 hover:border-gray-500"
                 >
-                  <Button
-                    variant="outline"
-                    className="w-full h-11 neon-border bg-transparent hover:bg-blue-600/20 transition-all duration-300 group !cursor-pointer text-sm"
-                  >
-                    <Github className="mr-2 group-hover:rotate-12 transition-transform duration-300" size={16} />
-                    GitHub
-                  </Button>
+                  <Github size={20} />
+                  <span className="font-medium">GitHub</span>
                 </a>
 
                 <a
                   href="https://www.linkedin.com/in/kenguva-surya-vishnu/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 hover:text-blue-300 rounded-lg transition-all duration-300 hover:scale-105 border border-blue-500/50 hover:border-blue-400"
                 >
-                  <Button
-                    variant="outline"
-                    className="w-full h-11 neon-border bg-transparent hover:bg-blue-600/20 transition-all duration-300 group !cursor-pointer text-sm"
-                  >
-                    <Linkedin className="mr-2 group-hover:rotate-12 transition-transform duration-300" size={16} />
-                    LinkedIn
-                  </Button>
+                  <Linkedin size={20} />
+                  <span className="font-medium">LinkedIn</span>
                 </a>
               </div>
-            </div>
 
-            {/* Quick Contact */}
-            <div className="card-gradient p-6 sm:p-8 rounded-xl border border-gray-700/50 section-fade">
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 gradient-text text-center">
-                Ready to Work Together?
-              </h3>
-              
-              <p className="text-gray-300 text-center mb-8 text-sm sm:text-base leading-relaxed">
-                Have a project in mind? Let's discuss how we can bring your ideas to life with cutting-edge technology solutions.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=suryakenguva1@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
-                  <Button
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                  >
-                    <Mail className="mr-2" size={18} />
-                    Send Email
-                  </Button>
-                </a>
-
-                <div className="w-full">
-                  <Button
-                    variant="outline"
-                    className="w-full border-2 border-green-500/50 text-green-400 hover:bg-green-500/10 hover:border-green-400 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-                    onClick={() => {
-                      navigator.clipboard.writeText('+91-9182560368');
-                      // You could add a toast notification here
-                      alert('Phone number copied to clipboard: +91-9182560368');
-                    }}
-                  >
-                    <Phone className="mr-2" size={18} />
-                    Copy Phone Number
-                  </Button>
-                </div>
-
-                <a
-                  href="https://github.com/SuryaVishnuKenguva"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
-                  <Button
-                    variant="outline"
-                    className="w-full border-2 border-gray-500/50 text-gray-300 hover:bg-gray-500/10 hover:border-gray-400 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105"
-                  >
-                    <Github className="mr-2" size={18} />
-                    GitHub Profile
-                  </Button>
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/kenguva-surya-vishnu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
-                  <Button
-                    variant="outline"
-                    className="w-full border-2 border-blue-500/50 text-blue-400 hover:bg-blue-500/10 hover:border-blue-400 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105"
-                  >
-                    <Linkedin className="mr-2" size={18} />
-                    LinkedIn Profile
-                  </Button>
-                </a>
+              <div className="mt-8 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+                <p className="text-green-400 text-sm font-medium">
+                  💡 Ready to start your project? Send me an email or connect on LinkedIn!
+                </p>
               </div>
             </div>
           </div>
