@@ -31,23 +31,23 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="h-screen flex items-center bg-slate-900/50 relative overflow-hidden">
+    <section id="skills" className="min-h-screen py-16 bg-slate-900/50 relative overflow-hidden">
       {/* Background tech elements with smooth movement */}
       <div className="absolute inset-0">
-        <div className="absolute top-16 md:top-20 right-16 md:right-20 text-blue-500/10 floating-tech-slow">
-          <Cpu size={60} className="md:w-20 md:h-20 animate-pulse" />
+        <div className="absolute top-8 right-8 sm:top-16 sm:right-16 text-blue-500/10 floating-tech-slow">
+          <Cpu size={40} className="sm:w-14 sm:h-14 md:w-20 md:h-20 animate-pulse" />
         </div>
-        <div className="absolute bottom-16 md:bottom-20 left-16 md:left-20 text-purple-500/10 floating-tech-reverse">
-          <Brain size={60} className="md:w-20 md:h-20 animate-pulse delay-1000" />
+        <div className="absolute bottom-8 left-8 sm:bottom-16 sm:left-16 text-purple-500/10 floating-tech-reverse">
+          <Brain size={40} className="sm:w-14 sm:h-14 md:w-20 md:h-20 animate-pulse delay-1000" />
         </div>
       </div>
       
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center mb-8 md:mb-16 section-fade">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+      <div className="w-full max-w-7xl mx-auto px-4 relative z-10">
+        <div className="text-center mb-12 section-fade">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
             <span className="gradient-text">Technical Expertise</span>
           </h2>
-          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto px-4">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             Mastering cutting-edge technologies to build intelligent, scalable solutions
           </p>
         </div>

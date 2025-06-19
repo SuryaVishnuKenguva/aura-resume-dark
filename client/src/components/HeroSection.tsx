@@ -111,9 +111,9 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
+      <div className="w-full max-w-6xl mx-auto px-4 text-center relative z-10">
         <div className="animate-fade-in">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold mb-4 md:mb-6 relative">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 relative">
             <span className="gradient-text text-shadow-glow">
               Surya Vishnu Kenguva
             </span>

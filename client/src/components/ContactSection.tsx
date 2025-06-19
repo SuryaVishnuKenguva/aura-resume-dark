@@ -207,103 +207,62 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="card-gradient p-5 sm:p-6 md:p-8 rounded-xl md:rounded-2xl border border-gray-700/50 section-fade order-1 lg:order-2">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 gradient-text">
-                Send Message
+            {/* Quick Contact */}
+            <div className="card-gradient p-6 sm:p-8 rounded-xl border border-gray-700/50 section-fade">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 gradient-text text-center">
+                Ready to Work Together?
               </h3>
+              
+              <p className="text-gray-300 text-center mb-8 text-sm sm:text-base leading-relaxed">
+                Have a project in mind? Let's discuss how we can bring your ideas to life with cutting-edge technology solutions.
+              </p>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Name *
-                    </label>
-                    <Input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full h-11 sm:h-12 glass-effect border-gray-600/50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 text-sm sm:text-base"
-                      placeholder="Your Name"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Email *
-                    </label>
-                    <Input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full h-11 sm:h-12 glass-effect border-gray-600/50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 text-sm sm:text-base"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">
-                    Subject *
-                  </label>
-                  <Input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full h-11 sm:h-12 glass-effect border-gray-600/50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 text-sm sm:text-base"
-                    placeholder="Project Discussion"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">
-                    Message *
-                  </label>
-                  <Textarea
-                    rows={4}
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full min-h-[100px] glass-effect border-gray-600/50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:ring-2 transition-all duration-300 resize-none text-sm sm:text-base"
-                    placeholder="Tell me about your project..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full h-12 sm:h-14 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-2 text-sm sm:text-base shadow-lg hover:shadow-xl touch-manipulation"
-                  style={{ 
-                    cursor: isLoading ? 'not-allowed' : 'pointer'
-                  }}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="mailto:suryakenguva1@gmail.com"
+                  className="flex-1 sm:flex-none"
                 >
-                  {isLoading ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send size={18} />
-                      Send Message
-                    </>
-                  )}
-                </button>
-              </form>
+                  <Button
+                    className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    <Mail className="mr-2" size={18} />
+                    Send Email
+                  </Button>
+                </a>
 
-              <div className="mt-6 p-3 glass-effect rounded-lg border border-green-500/20">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <p className="text-green-400 text-sm font-medium">
-                    Direct delivery to inbox within seconds!
-                  </p>
+                <a
+                  href="tel:+919182560368"
+                  className="flex-1 sm:flex-none"
+                >
+                  <Button
+                    variant="outline"
+                    className="w-full sm:w-auto border-2 border-blue-500/50 text-blue-400 hover:bg-blue-500/10 hover:border-blue-400 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105"
+                  >
+                    <Phone className="mr-2" size={18} />
+                    Call Now
+                  </Button>
+                </a>
+              </div>
+
+              <div className="mt-8 text-center">
+                <p className="text-gray-400 text-sm mb-4">Or find me on</p>
+                <div className="flex justify-center gap-4">
+                  <a
+                    href="https://github.com/SuryaVishnuKenguva"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-full bg-gray-700/50 hover:bg-gray-600/50 transition-all duration-300 hover:scale-110 group"
+                  >
+                    <Github className="w-5 h-5 text-gray-400 group-hover:text-white" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/kenguva-surya-vishnu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-full bg-gray-700/50 hover:bg-gray-600/50 transition-all duration-300 hover:scale-110 group"
+                  >
+                    <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
+                  </a>
                 </div>
               </div>
             </div>
