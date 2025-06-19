@@ -31,7 +31,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden py-16 md:py-0">
+    <section className="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-20 md:py-0">
       {/* Enhanced animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-60 sm:w-80 md:w-96 h-60 sm:h-80 md:h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse floating-card"></div>
