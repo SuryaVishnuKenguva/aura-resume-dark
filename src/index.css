@@ -81,6 +81,15 @@
   ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(to bottom, #2563eb, #7c3aed);
   }
+
+  /* Ensure buttons have proper cursor */
+  button, .cursor-pointer {
+    cursor: pointer !important;
+  }
+  
+  button:disabled {
+    cursor: not-allowed !important;
+  }
 }
 
 @layer components {
@@ -217,6 +226,7 @@
 
   .magnetic-hover {
     transition: transform 0.3s ease;
+    cursor: pointer;
   }
 
   .magnetic-hover:hover {
@@ -225,6 +235,19 @@
 
   .text-shadow-glow {
     text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+
+  /* Enhanced responsive fixes */
+  @media (max-width: 768px) {
+    .h-screen {
+      min-height: 100vh;
+      min-height: 100dvh; /* Dynamic viewport height for mobile */
+    }
+    
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 }
 
@@ -344,8 +367,6 @@
   }
 }
 
-/* Add these styles at the end of your index.css file */
-
 /* AI-based animations */
 .ai-particles {
   position: absolute;
@@ -425,5 +446,11 @@
   
   .neural-line {
     stroke-width: 0.3;
+  }
+  
+  /* Fix for section heights on mobile */
+  section {
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 }

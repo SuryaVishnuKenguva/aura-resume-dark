@@ -43,8 +43,8 @@ const ExperienceSection = () => {
         </div>
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-12 section-fade">
+      <div className="container mx-auto px-6 relative z-10 h-full flex flex-col justify-center py-20">
+        <div className="text-center mb-8 section-fade">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="gradient-text">Professional Experience</span>
           </h2>
@@ -53,8 +53,8 @@ const ExperienceSection = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="card-gradient p-8 rounded-2xl border border-gray-700/50 section-fade">
+        <div className="max-w-5xl mx-auto flex-1">
+          <div className="card-gradient p-8 rounded-2xl border border-gray-700/50 section-fade h-full flex flex-col justify-center">
             {/* Company Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
               <div className="flex items-start gap-4 mb-4 md:mb-0">
@@ -79,7 +79,7 @@ const ExperienceSection = () => {
             </div>
 
             {/* Achievements Grid */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 flex-1">
               {experience.achievements.map((achievement, index) => (
                 <div 
                   key={index}
