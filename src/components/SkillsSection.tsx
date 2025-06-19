@@ -4,22 +4,22 @@ import { Code, Database, Server, Smartphone, Globe, GitBranch, Brain, Cpu, Zap, 
 const SkillsSection = () => {
   const skillCategories = [
     {
-      icon: <Brain className="w-8 h-8" />,
+      icon: <Brain className="w-6 h-6 md:w-8 md:h-8" />,
       title: "AI & Machine Learning",
       skills: ["Python", "TensorFlow", "Computer Vision", "Neural Networks", "Deep Learning", "OpenCV"]
     },
     {
-      icon: <Globe className="w-8 h-8" />,
+      icon: <Globe className="w-6 h-6 md:w-8 md:h-8" />,
       title: "Web Technologies",
       skills: ["ReactJS", "Node.js", "MongoDB", "Express.js", "JavaScript", "TypeScript"]
     },
     {
-      icon: <Server className="w-8 h-8" />,
+      icon: <Server className="w-6 h-6 md:w-8 md:h-8" />,
       title: "Backend & Cloud",
       skills: [".NET Core", "PostgreSQL", "Redis", "RabbitMQ", "Azure", "API Development"]
     },
     {
-      icon: <Network className="w-8 h-8" />,
+      icon: <Network className="w-6 h-6 md:w-8 md:h-8" />,
       title: "DevOps & Tools",
       skills: ["Docker", "Git", "Azure DevOps", "SignalR", "ADO.NET", "Agile"]
     }
@@ -32,37 +32,37 @@ const SkillsSection = () => {
 
   return (
     <section id="skills" className="h-screen flex items-center bg-slate-900/50 relative overflow-hidden">
-      {/* Background tech elements */}
+      {/* Background tech elements with smooth movement */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 text-blue-500/10">
-          <Cpu size={80} className="animate-pulse" />
+        <div className="absolute top-16 md:top-20 right-16 md:right-20 text-blue-500/10 floating-tech-slow">
+          <Cpu size={60} className="md:w-20 md:h-20 animate-pulse" />
         </div>
-        <div className="absolute bottom-20 left-20 text-purple-500/10">
-          <Brain size={80} className="animate-pulse delay-1000" />
+        <div className="absolute bottom-16 md:bottom-20 left-16 md:left-20 text-purple-500/10 floating-tech-reverse">
+          <Brain size={60} className="md:w-20 md:h-20 animate-pulse delay-1000" />
         </div>
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16 section-fade">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="text-center mb-8 md:mb-16 section-fade">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
             <span className="gradient-text">Technical Expertise</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto px-4">
             Mastering cutting-edge technologies to build intelligent, scalable solutions
           </p>
         </div>
 
-        {/* Skill Categories */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {/* Skill Categories - Mobile Responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
           {skillCategories.map((category, index) => (
             <div 
               key={category.title}
-              className="card-gradient p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 section-fade hover:transform hover:scale-105 skill-glow"
+              className="card-gradient p-4 md:p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 section-fade hover:transform hover:scale-105 skill-glow"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="text-blue-400 mb-4">{category.icon}</div>
-              <h3 className="text-lg font-semibold mb-3 text-white">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="text-blue-400 mb-3 md:mb-4">{category.icon}</div>
+              <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3 text-white">{category.title}</h3>
+              <div className="flex flex-wrap gap-1 md:gap-2">
                 {category.skills.map((skill) => (
                   <span 
                     key={skill}
@@ -76,14 +76,14 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Technology Cloud */}
+        {/* Technology Cloud - Mobile Responsive */}
         <div className="section-fade">
-          <h3 className="text-xl font-semibold text-center mb-6 text-white">Core Technologies</h3>
-          <div className="flex flex-wrap justify-center gap-3">
+          <h3 className="text-lg md:text-xl font-semibold text-center mb-4 md:mb-6 text-white">Core Technologies</h3>
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 px-4">
             {technologies.map((tech, index) => (
               <div
                 key={tech}
-                className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-500/30 px-4 py-2 rounded-full text-white font-medium hover:from-blue-600/40 hover:to-purple-600/40 transition-all duration-300 transform hover:scale-110 cursor-default"
+                className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-500/30 px-3 md:px-4 py-1 md:py-2 rounded-full text-white font-medium hover:from-blue-600/40 hover:to-purple-600/40 transition-all duration-300 transform hover:scale-110 cursor-default text-sm md:text-base"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {tech}
