@@ -1,73 +1,138 @@
 
-import { Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, Download, ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
+  const [displayText, setDisplayText] = useState('');
+  const fullText = 'Software Engineer & Full-Stack Developer';
+
+  useEffect(() => {
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < fullText.length) {
+        setDisplayText(fullText.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Enhanced animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse floating-card"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000 floating-card"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-500 floating-card"></div>
+        
+        {/* Floating particles */}
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 3}s`
+            }}
+          />
+        ))}
       </div>
       
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="gradient-text">Kenguva Surya Vishnu</span>
+          {/* Profile Image */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative">
+              <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 p-1 animate-glow">
+                <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
+                  <span className="text-4xl font-bold gradient-text">KS</span>
+                </div>
+              </div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-full opacity-20 blur-xl"></div>
+            </div>
+          </div>
+
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 relative">
+            <span className="gradient-text text-shadow-glow">Kenguva Surya Vishnu</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-4 animate-slide-in-left">
-            Software Engineer & Full-Stack Developer
-          </p>
-          <p className="text-lg text-gray-400 mb-8 animate-slide-in-right">
-            Crafting scalable solutions with modern technologies
+          
+          <div className="text-xl md:text-3xl text-gray-300 mb-4 h-12 flex items-center justify-center">
+            <span className="animate-typing font-mono">{displayText}</span>
+          </div>
+          
+          <p className="text-lg text-gray-400 mb-8 animate-slide-in-right max-w-2xl mx-auto leading-relaxed">
+            Passionate about crafting scalable solutions with cutting-edge technologies and delivering exceptional user experiences
           </p>
           
-          {/* Contact Info */}
-          <div className="flex flex-wrap justify-center items-center gap-6 mb-8 text-gray-300 animate-fade-in">
-            <div className="flex items-center gap-2">
-              <Mail size={16} />
-              <span>suryakenguva1@gmail.com</span>
+          {/* Enhanced Contact Info */}
+          <div className="flex flex-wrap justify-center items-center gap-8 mb-12 text-gray-300 animate-fade-in">
+            <div className="flex items-center gap-3 glass-effect px-4 py-2 rounded-full magnetic-hover">
+              <Mail size={18} className="text-blue-400" />
+              <span className="font-medium">suryakenguva1@gmail.com</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Phone size={16} />
-              <span>+91-9182560368</span>
+            <div className="flex items-center gap-3 glass-effect px-4 py-2 rounded-full magnetic-hover">
+              <Phone size={18} className="text-green-400" />
+              <span className="font-medium">+91-9182560368</span>
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin size={16} />
-              <span>Vadodara, India</span>
+            <div className="flex items-center gap-3 glass-effect px-4 py-2 rounded-full magnetic-hover">
+              <MapPin size={18} className="text-purple-400" />
+              <span className="font-medium">Vadodara, India</span>
             </div>
           </div>
           
-          {/* Social Links */}
-          <div className="flex justify-center gap-4 mb-12 animate-fade-in">
-            <Button variant="outline" size="lg" className="bg-transparent border-gray-600 hover:bg-blue-600/20 hover:border-blue-500 transition-all duration-300">
-              <Github className="mr-2" size={20} />
+          {/* Enhanced Social Links */}
+          <div className="flex justify-center gap-6 mb-12 animate-fade-in">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="neon-border bg-transparent hover:bg-blue-600/20 hover:scale-110 transition-all duration-300 group"
+            >
+              <Github className="mr-3 group-hover:rotate-12 transition-transform duration-300" size={20} />
               GitHub
             </Button>
-            <Button variant="outline" size="lg" className="bg-transparent border-gray-600 hover:bg-blue-600/20 hover:border-blue-500 transition-all duration-300">
-              <Linkedin className="mr-2" size={20} />
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="neon-border bg-transparent hover:bg-blue-600/20 hover:scale-110 transition-all duration-300 group"
+            >
+              <Linkedin className="mr-3 group-hover:rotate-12 transition-transform duration-300" size={20} />
               LinkedIn
             </Button>
           </div>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 animate-glow">
-              View My Work
+          {/* Enhanced CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-6 animate-fade-in">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 magnetic-hover animate-gradient text-lg font-semibold shadow-2xl"
+            >
+              <span className="relative z-10">View My Work</span>
             </Button>
-            <Button variant="outline" size="lg" className="bg-transparent border-gray-600 hover:bg-gray-800 px-8 py-3 rounded-full transition-all duration-300">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="neon-border bg-transparent hover:bg-gray-800/50 px-8 py-4 rounded-full transition-all duration-300 magnetic-hover text-lg font-semibold group"
+            >
+              <Download className="mr-3 group-hover:animate-bounce" size={20} />
               Download Resume
             </Button>
           </div>
         </div>
       </div>
       
-      {/* Scroll indicator */}
+      {/* Enhanced scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
+        <div className="flex flex-col items-center gap-2">
+          <div className="w-6 h-10 border-2 border-blue-400 rounded-full flex justify-center relative overflow-hidden">
+            <div className="w-1 h-3 bg-blue-400 rounded-full mt-2 animate-pulse"></div>
+          </div>
+          <ArrowDown size={16} className="text-blue-400 animate-pulse" />
         </div>
       </div>
     </section>
