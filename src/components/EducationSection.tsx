@@ -1,5 +1,5 @@
 
-import { GraduationCap, Calendar, Award, BookOpen } from 'lucide-react';
+import { GraduationCap, Calendar, Award, BookOpen, Trophy } from 'lucide-react';
 
 const EducationSection = () => {
   const education = {
@@ -8,13 +8,12 @@ const EducationSection = () => {
     period: "Aug 2021 - Present",
     cgpa: "7.83/10",
     coursework: [
+      "AI & Machine Learning",
+      "Data Structures & Algorithms", 
       "Object Oriented Programming",
-      "Databases",
-      "Data Structures and Algorithms",
-      "Operating Systems",
       "Computer Networks",
-      "Artificial Intelligence",
-      "Machine Learning"
+      "Operating Systems",
+      "Database Systems"
     ]
   };
 
@@ -25,32 +24,42 @@ const EducationSection = () => {
       type: "Software Engineering"
     },
     {
-      title: "NPTEL Certificate",
-      issuer: "NPTEL",
-      type: "Software Engineering"
+      title: "Johns Hopkins - Web Development",
+      issuer: "Coursera", 
+      type: "Full-Stack Development"
     },
     {
-      title: "Johns Hopkins University - HTML, CSS, and JavaScript for Web Developers",
-      issuer: "Coursera",
-      type: "Web Development"
+      title: "NPTEL Certificate",
+      issuer: "NPTEL",
+      type: "Computer Science"
     }
   ];
 
   return (
-    <section id="education" className="py-20 bg-slate-800/30">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 section-fade">
+    <section id="education" className="h-screen flex items-center bg-slate-800/30 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 text-purple-500/10">
+          <GraduationCap size={80} className="animate-pulse" />
+        </div>
+        <div className="absolute bottom-20 right-20 text-blue-500/10">
+          <Trophy size={60} className="animate-pulse delay-1000" />
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-12 section-fade">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Education & Certifications</span>
+            <span className="gradient-text">Education & Achievements</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Academic foundation and continuous learning in computer science
+            Academic excellence and continuous learning in computer science
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-8">
+        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8">
           {/* Education */}
-          <div className="card-gradient p-8 rounded-2xl border border-gray-700/50 section-fade">
+          <div className="card-gradient p-8 rounded-2xl border border-gray-700/50 section-fade magnetic-hover">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-600/20 p-3 rounded-lg">
                 <GraduationCap className="w-8 h-8 text-blue-400" />
@@ -80,7 +89,7 @@ const EducationSection = () => {
               <div>
                 <h5 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
                   <BookOpen size={18} className="text-purple-400" />
-                  Relevant Coursework
+                  Core Coursework
                 </h5>
                 <div className="grid grid-cols-2 gap-2">
                   {education.coursework.map((course) => (
@@ -93,37 +102,43 @@ const EducationSection = () => {
             </div>
           </div>
 
-          {/* Certifications */}
-          <div className="card-gradient p-8 rounded-2xl border border-gray-700/50 section-fade">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-purple-600/20 p-3 rounded-lg">
-                <Award className="w-8 h-8 text-purple-400" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white">Certifications</h3>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              {certifications.map((cert, index) => (
-                <div 
-                  key={index}
-                  className="bg-slate-900/50 p-4 rounded-xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300"
-                >
-                  <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-white font-semibold text-sm leading-relaxed">{cert.title}</h4>
-                  </div>
-                  <p className="text-purple-400 font-medium text-sm mb-1">{cert.issuer}</p>
-                  <span className="inline-block bg-purple-600/20 text-purple-300 px-2 py-1 rounded-full text-xs">
-                    {cert.type}
-                  </span>
+          {/* Certifications & Recognition */}
+          <div className="space-y-6">
+            {/* Certifications */}
+            <div className="card-gradient p-8 rounded-2xl border border-gray-700/50 section-fade magnetic-hover">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-purple-600/20 p-3 rounded-lg">
+                  <Award className="w-8 h-8 text-purple-400" />
                 </div>
-              ))}
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Certifications</h3>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {certifications.map((cert, index) => (
+                  <div 
+                    key={index}
+                    className="bg-slate-900/50 p-4 rounded-xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300"
+                  >
+                    <h4 className="text-white font-semibold text-sm leading-relaxed mb-1">{cert.title}</h4>
+                    <p className="text-purple-400 font-medium text-sm mb-1">{cert.issuer}</p>
+                    <span className="inline-block bg-purple-600/20 text-purple-300 px-2 py-1 rounded-full text-xs">
+                      {cert.type}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="mt-6 p-4 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-lg border border-purple-500/30">
-              <p className="text-purple-300 text-sm font-medium">
-                🏆 Recognized among top teams for presenting "Drive Aware Alarm," an innovative project using drowsiness detection technology to enhance driver safety.
+            {/* Recognition */}
+            <div className="card-gradient p-6 rounded-2xl border border-yellow-500/30 bg-gradient-to-r from-yellow-600/10 to-orange-600/10">
+              <div className="flex items-center gap-3 mb-3">
+                <Trophy className="w-6 h-6 text-yellow-400" />
+                <h4 className="text-lg font-bold text-white">Recognition</h4>
+              </div>
+              <p className="text-yellow-300 text-sm font-medium leading-relaxed">
+                🏆 Recognized among top teams for presenting "Drive Aware Alarm" - an innovative drowsiness detection system enhancing driver safety through AI and computer vision.
               </p>
             </div>
           </div>

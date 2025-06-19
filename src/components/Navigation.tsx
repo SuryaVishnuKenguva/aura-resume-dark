@@ -39,7 +39,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-2xl font-bold">
-              <span className="gradient-text">KSV</span>
+              <span className="gradient-text">Surya Vishnu</span>
             </div>
           </div>
 

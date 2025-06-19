@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Phone, MapPin, Download, ArrowDown } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, Download, ArrowDown, Brain, Cpu, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 
@@ -22,12 +22,23 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="hero-gradient h-screen flex items-center justify-center relative overflow-hidden">
       {/* Enhanced animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse floating-card"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000 floating-card"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-500 floating-card"></div>
+        
+        {/* Tech floating icons */}
+        <div className="absolute top-20 left-20 text-blue-400/30 animate-pulse">
+          <Brain size={32} />
+        </div>
+        <div className="absolute top-32 right-32 text-purple-400/30 animate-pulse delay-1000">
+          <Cpu size={28} />
+        </div>
+        <div className="absolute bottom-32 left-32 text-cyan-400/30 animate-pulse delay-500">
+          <Zap size={30} />
+        </div>
         
         {/* Floating particles */}
         {[...Array(20)].map((_, i) => (
@@ -46,18 +57,6 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-in">
-          {/* Profile Image */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 p-1 animate-glow">
-                <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
-                  <span className="text-4xl font-bold gradient-text">KS</span>
-                </div>
-              </div>
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-full opacity-20 blur-xl"></div>
-            </div>
-          </div>
-
           <h1 className="text-6xl md:text-8xl font-bold mb-6 relative">
             <span className="gradient-text text-shadow-glow">Kenguva Surya Vishnu</span>
           </h1>
@@ -67,7 +66,7 @@ const HeroSection = () => {
           </div>
           
           <p className="text-lg text-gray-400 mb-8 animate-slide-in-right max-w-2xl mx-auto leading-relaxed">
-            Passionate about crafting scalable solutions with cutting-edge technologies and delivering exceptional user experiences
+            Crafting intelligent solutions with cutting-edge AI, machine learning, and full-stack technologies
           </p>
           
           {/* Enhanced Contact Info */}

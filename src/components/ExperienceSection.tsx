@@ -1,5 +1,5 @@
 
-import { Briefcase, Calendar, MapPin, TrendingUp } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, TrendingUp, Zap } from 'lucide-react';
 
 const ExperienceSection = () => {
   const experience = {
@@ -10,40 +10,50 @@ const ExperienceSection = () => {
     achievements: [
       {
         title: "TravelEase Platform Development",
-        description: "Led the development of the TravelEase project (a travel management platform for booking flights, hotels, and car rentals) using .NET MVC, API, ADO.NET, PostgreSQL, MongoDB, Redis, and RabbitMQ. Completed the project in 3 months, reducing delivery time by 20% through Agile methodologies and continuous collaboration in Azure DevOps.",
-        impact: "20% reduction in delivery time"
+        description: "Led development of travel management platform using .NET MVC, PostgreSQL, MongoDB, Redis, and RabbitMQ. Delivered in 3 months with 20% faster delivery through Agile methodologies.",
+        impact: "20% delivery time reduction"
       },
       {
         title: "Real-time Notification System",
-        description: "Developed the TrackMyTrip dashboard, incorporating job-based authentication and implementing real-time notifications via SignalR and RabbitMQ, reducing response times by 40%.",
-        impact: "40% reduction in response times"
+        description: "Implemented TrackMyTrip dashboard with job-based authentication and real-time notifications via SignalR and RabbitMQ.",
+        impact: "40% response time improvement"
       },
       {
         title: "API Performance Optimization",
-        description: "Optimized the TrackMyTrip REST API in .NET Core, enhancing data handling, security and scalability. Achieved a 25% increase in API performance and reduced server load by 15% through code refactoring and efficient database queries.",
-        impact: "25% increase in API performance, 15% reduction in server load"
+        description: "Enhanced REST API performance in .NET Core with optimized database queries and security improvements.",
+        impact: "25% performance boost, 15% load reduction"
       },
       {
         title: "Agile Development Leadership",
-        description: "Collaborated in 3 Agile sprints with a cross-functional team, ensuring on-time delivery of features while using Git for version control. Actively contributed to the completion of 90% of sprint goals within deadlines, helping the team maintain high productivity levels.",
-        impact: "90% sprint goals completion rate"
+        description: "Led 3 Agile sprints with cross-functional teams, maintaining high productivity and meeting deadlines consistently.",
+        impact: "90% sprint goals completion"
       }
     ]
   };
 
   return (
-    <section id="experience" className="py-20 bg-slate-800/30">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 section-fade">
+    <section id="experience" className="h-screen flex items-center bg-slate-800/30 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 text-blue-500/10">
+          <Zap size={60} className="animate-pulse" />
+        </div>
+        <div className="absolute bottom-20 right-20 text-purple-500/10">
+          <TrendingUp size={60} className="animate-pulse delay-1000" />
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-12 section-fade">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Work Experience</span>
+            <span className="gradient-text">Professional Experience</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Professional journey in software development and engineering
+            Delivering innovative solutions and driving technical excellence
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="card-gradient p-8 rounded-2xl border border-gray-700/50 section-fade">
             {/* Company Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
@@ -54,7 +64,6 @@ const ExperienceSection = () => {
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">{experience.position}</h3>
                   <p className="text-blue-400 font-semibold text-lg">{experience.company}</p>
-                  <p className="text-gray-400">{experience.type}</p>
                 </div>
               </div>
               <div className="flex flex-col items-start md:items-end gap-2">
@@ -69,21 +78,16 @@ const ExperienceSection = () => {
               </div>
             </div>
 
-            {/* Achievements */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-green-400" />
-                Key Achievements
-              </h4>
-              
+            {/* Achievements Grid */}
+            <div className="grid md:grid-cols-2 gap-6">
               {experience.achievements.map((achievement, index) => (
                 <div 
                   key={index}
-                  className="bg-slate-900/50 p-6 rounded-xl border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300"
+                  className="bg-slate-900/50 p-6 rounded-xl border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300 magnetic-hover"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <h5 className="text-lg font-semibold text-white mb-3">{achievement.title}</h5>
-                  <p className="text-gray-300 leading-relaxed mb-3">{achievement.description}</p>
+                  <p className="text-gray-300 leading-relaxed mb-3 text-sm">{achievement.description}</p>
                   <div className="inline-flex items-center gap-2 bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm font-medium">
                     <TrendingUp size={14} />
                     {achievement.impact}
