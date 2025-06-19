@@ -155,25 +155,23 @@ const ContactSection = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
-                <a
-                  href="https://github.com/SuryaVishnuKenguva"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-700/50 hover:bg-gray-600/50 text-white rounded-lg transition-all duration-300 hover:scale-105 border border-gray-600/50 hover:border-gray-500"
+                <div
+                  onClick={() => window.open('https://github.com/SuryaVishnuKenguva', '_blank')}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-700/50 hover:bg-gray-600/50 text-white rounded-lg transition-all duration-300 hover:scale-105 border border-gray-600/50 hover:border-gray-500 cursor-pointer"
+                  style={{ cursor: 'pointer' }}
                 >
                   <Github size={20} />
                   <span className="font-medium">GitHub</span>
-                </a>
+                </div>
 
-                <a
-                  href="https://www.linkedin.com/in/kenguva-surya-vishnu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 hover:text-blue-300 rounded-lg transition-all duration-300 hover:scale-105 border border-blue-500/50 hover:border-blue-400"
+                <div
+                  onClick={() => window.open('https://www.linkedin.com/in/kenguva-surya-vishnu/', '_blank')}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 hover:text-blue-300 rounded-lg transition-all duration-300 hover:scale-105 border border-blue-500/50 hover:border-blue-400 cursor-pointer"
+                  style={{ cursor: 'pointer' }}
                 >
                   <Linkedin size={20} />
                   <span className="font-medium">LinkedIn</span>
-                </a>
+                </div>
               </div>
 
               <div className="mt-8 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
