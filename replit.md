@@ -107,3 +107,6 @@ Preferred communication style: Simple, everyday language.
 
 Changelog:
 - June 19, 2025. Initial setup
+- June 19, 2025. Fixed mobile responsiveness across all sections with comprehensive CSS overrides
+- June 19, 2025. Replaced contact form with clean direct contact buttons (email, phone copy, GitHub, LinkedIn)
+- June 19, 2025. Updated routing from react-router-dom to wouter for Replit compatibility

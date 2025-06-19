@@ -217,53 +217,65 @@ const ContactSection = () => {
                 Have a project in mind? Let's discuss how we can bring your ideas to life with cutting-edge technology solutions.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <a
-                  href="mailto:suryakenguva1@gmail.com"
-                  className="flex-1 sm:flex-none"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=suryakenguva1@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
                 >
                   <Button
-                    className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     <Mail className="mr-2" size={18} />
                     Send Email
                   </Button>
                 </a>
 
+                <div className="w-full">
+                  <Button
+                    variant="outline"
+                    className="w-full border-2 border-green-500/50 text-green-400 hover:bg-green-500/10 hover:border-green-400 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer"
+                    onClick={() => {
+                      navigator.clipboard.writeText('+91-9182560368');
+                      // You could add a toast notification here
+                      alert('Phone number copied to clipboard: +91-9182560368');
+                    }}
+                  >
+                    <Phone className="mr-2" size={18} />
+                    Copy Phone Number
+                  </Button>
+                </div>
+
                 <a
-                  href="tel:+919182560368"
-                  className="flex-1 sm:flex-none"
+                  href="https://github.com/SuryaVishnuKenguva"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
                 >
                   <Button
                     variant="outline"
-                    className="w-full sm:w-auto border-2 border-blue-500/50 text-blue-400 hover:bg-blue-500/10 hover:border-blue-400 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105"
+                    className="w-full border-2 border-gray-500/50 text-gray-300 hover:bg-gray-500/10 hover:border-gray-400 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105"
                   >
-                    <Phone className="mr-2" size={18} />
-                    Call Now
+                    <Github className="mr-2" size={18} />
+                    GitHub Profile
                   </Button>
                 </a>
-              </div>
 
-              <div className="mt-8 text-center">
-                <p className="text-gray-400 text-sm mb-4">Or find me on</p>
-                <div className="flex justify-center gap-4">
-                  <a
-                    href="https://github.com/SuryaVishnuKenguva"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-gray-700/50 hover:bg-gray-600/50 transition-all duration-300 hover:scale-110 group"
+                <a
+                  href="https://www.linkedin.com/in/kenguva-surya-vishnu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
+                  <Button
+                    variant="outline"
+                    className="w-full border-2 border-blue-500/50 text-blue-400 hover:bg-blue-500/10 hover:border-blue-400 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105"
                   >
-                    <Github className="w-5 h-5 text-gray-400 group-hover:text-white" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/kenguva-surya-vishnu/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-gray-700/50 hover:bg-gray-600/50 transition-all duration-300 hover:scale-110 group"
-                  >
-                    <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
-                  </a>
-                </div>
+                    <Linkedin className="mr-2" size={18} />
+                    LinkedIn Profile
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
