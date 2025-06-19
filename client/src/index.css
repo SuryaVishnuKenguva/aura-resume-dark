@@ -264,6 +264,44 @@
       padding-left: 1rem;
       padding-right: 1rem;
     }
+
+    /* Fix overflow and spacing issues on mobile */
+    body {
+      overflow-x: hidden;
+    }
+
+    /* Ensure proper spacing and prevent content cutoff */
+    section {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+
+    /* Remove extra gaps and margins */
+    .container {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    /* Fix card responsiveness */
+    .card-gradient {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+
+    /* Better form inputs on mobile */
+    input, textarea {
+      -webkit-appearance: none;
+      border-radius: 8px;
+    }
+
+    /* Disable hover effects on mobile */
+    .magnetic-hover:hover {
+      transform: none;
+    }
   }
 }
 
